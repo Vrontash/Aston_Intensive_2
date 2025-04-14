@@ -1,5 +1,6 @@
 package org.example.util;
 
+import org.example.model.User;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
@@ -14,6 +15,7 @@ public class HibernateUtil {
                 ServiceRegistry sr = new StandardServiceRegistryBuilder().build();
                 MetadataSources metadataSources = new MetadataSources(sr);
                 Metadata metadata = metadataSources.buildMetadata();
+                metadataSources.addAnnotatedClass(User.class);
                 sessionFactory = metadata.buildSessionFactory();
             }catch (Exception e){
                 e.printStackTrace();
