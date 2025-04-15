@@ -14,8 +14,8 @@ public class HibernateUtil {
             try {
                 ServiceRegistry sr = new StandardServiceRegistryBuilder().build();
                 MetadataSources metadataSources = new MetadataSources(sr);
-                Metadata metadata = metadataSources.buildMetadata();
                 metadataSources.addAnnotatedClass(User.class);
+                Metadata metadata = metadataSources.buildMetadata();
                 sessionFactory = metadata.buildSessionFactory();
             }catch (Exception e){
                 e.printStackTrace();
