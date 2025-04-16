@@ -3,6 +3,7 @@ package org.example.dao;
 
 import org.example.model.User;
 import org.example.util.HibernateUtil;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.slf4j.Logger;
@@ -26,7 +27,7 @@ public class UserDaoImpl implements UserDao {
             if (tran != null)
                 tran.rollback();
             logger.error("Error finding user by Id: {}", id, e);
-            throw new RuntimeException(e);
+            throw new HibernateException(e);
         }
     }
 
@@ -43,7 +44,7 @@ public class UserDaoImpl implements UserDao {
             if (tran != null)
                 tran.rollback();
             logger.error("Error retrieving all users", e);
-            throw new RuntimeException(e);
+            throw new HibernateException(e);
         }
     }
 
@@ -59,7 +60,7 @@ public class UserDaoImpl implements UserDao {
             if (tran != null)
                 tran.rollback();
             logger.error("Error saving user", e);
-            throw new RuntimeException(e);
+            throw new HibernateException(e);
         }
     }
 
@@ -75,7 +76,7 @@ public class UserDaoImpl implements UserDao {
             if (tran != null)
                 tran.rollback();
             logger.error("Error updating user: {}", user.getId(), e);
-            throw new RuntimeException(e);
+            throw new HibernateException(e);
         }
     }
 
@@ -92,7 +93,7 @@ public class UserDaoImpl implements UserDao {
             if (tran != null)
                 tran.rollback();
             logger.error("Error deleting user: {}", id, e);
-            throw new RuntimeException(e);
+            throw new HibernateException(e);
         }
     }
 }
