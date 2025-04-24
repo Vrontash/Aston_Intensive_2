@@ -11,8 +11,8 @@ import java.util.regex.Pattern;
 public class UserService {
     UserDao userDao;
     Scanner scanner;
-    private final Pattern agePattern = Pattern.compile("\\d+");
-    private final Pattern emailPattern = Pattern.compile("\\w+@\\w+.\\w+");
+    private final Pattern agePattern = Pattern.compile("\\d+"); //Возраст только в виде цифр
+    private final Pattern emailPattern = Pattern.compile("\\w+@\\w+.\\w+");//Обязательное наличие "@","." и букв и цифр между ними
 
     public UserService(UserDao userDao, Scanner scanner){
         this.userDao = userDao;
@@ -67,14 +67,14 @@ public class UserService {
 
         System.out.print("Enter email: ");
         String email = scanner.nextLine();
-        if (!emailPattern.matcher(email).matches()) {
+        if (!emailPattern.matcher(email).matches()) { //Валидация Email'а
             System.out.println("Invalid Email!");
             return;
         }
 
         System.out.print("Enter age: ");
         String ageString = scanner.nextLine();
-        if (!agePattern.matcher(ageString).matches()){
+        if (!agePattern.matcher(ageString).matches()){ //Валидация возраста
             System.out.println("Invalid age!");
             return;
         }

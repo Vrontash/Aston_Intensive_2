@@ -1,4 +1,5 @@
 <configuration>
+    <!-- Логирование в консоль-->
     <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>
@@ -6,7 +7,7 @@
             </pattern>
         </encoder>
     </appender>
-
+    <!-- Логирование в файл-->
     <appender name="file" class="ch.qos.logback.core.FileAppender">
         <file>user.log</file>
         <encoder>
