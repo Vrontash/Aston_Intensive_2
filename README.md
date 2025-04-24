@@ -1,7 +1,7 @@
 ### [EN](#EN) | [RU](#RU)
 
 # <a name="RU"></a>Требования к запуску проекта
- - Создать базу данных.
+ - Создать базу данных. Работоспособность программы была проверена при созданной БД в pgAdmin4
  - Необходимо заполнить файл hibernate.properties в src.main.resources для доступа к БД:
    - **Адрес БД** hibernate.connection.url: \
            Пример: hibernate.connection.url = jdbc:postgresql://localhost:5432/Users
@@ -26,7 +26,7 @@
 - Обработать возможные исключения, связанные с Hibernate и PostgreSQL
 
 # <a name="EN"></a>Requirements for project to run
- - Create DB.
+ - Create DB. The program was tested using DB created in pgAdmin4
  - Fill out missing parts in hibernate.properties located in src.main.resources to access your DB:
    - Location of your created DB hibernate.connection.url\
    Example: hibernate.connection.url = jdbc:postgresql://localhost:5432/Users
